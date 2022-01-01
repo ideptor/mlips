@@ -1,7 +1,7 @@
 
-from typing import Dict
+from typing import Dict, List, Union
 from dataclasses import asdict, dataclass
-
+import json
 
 @dataclass
 class POSI:
@@ -76,7 +76,7 @@ class WifiFingerprint:
 
     def wifi_cnt(self):
         return len(self.wifi_dict)
-        
+
     def dict(self):
         return asdict(self)
 
@@ -88,3 +88,13 @@ class WifiFingerprint:
         )
         return fp
 
+def save_json(file_name: str,
+        collection: List[Union[POSI, WifiFingerprint]]):
+    
+    json_list = []
+    for item in collection:
+        json_list.append(item.dict())
+    
+    f = open(file_name, "w")
+    f.write(json.dumps(json_list, indent=2))
+    

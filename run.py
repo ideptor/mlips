@@ -13,3 +13,5 @@ if __name__ == "__main__":
 
     fps, posis = mf.bind_wifi_fingerprints(
         mf.filtering(args.trace_log))
+
+    posis.save_as_json(f"{trace_log[:-3]}_posis.json")
