@@ -97,4 +97,5 @@ def save_json(file_name: str,
     
     f = open(file_name, "w")
     f.write(json.dumps(json_list, indent=2))
+    print(f'"{file_name}" has been created.')
     
