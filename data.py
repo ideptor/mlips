@@ -1,5 +1,7 @@
 
+from typing import Dict
 from dataclasses import dataclass
+
 
 @dataclass
 class POSI:
@@ -55,3 +57,22 @@ class WIFI:
             int(tokens[6])
         )
         return wifi
+
+
+@dataclass
+class WifiFingerprint:
+
+    timestamp: float
+    wifi_dict: Dict[str, WIFI]
+
+    def add_wifi(self, wifi:WIFI):
+        self.wifi_dict[wifi.mac] = wifi
+
+    @staticmethod
+    def create(timestamp: float):
+        fp = WifiFingerprint(
+            timestamp,
+            dict()
+        )
+        return fp
+
