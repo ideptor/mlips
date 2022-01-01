@@ -1,6 +1,6 @@
 
 from typing import Dict
-from dataclasses import dataclass
+from dataclasses import asdict, dataclass
 
 
 @dataclass
@@ -13,6 +13,9 @@ class POSI:
     longitude: float
     floor_id: int
     bulding_id: int
+        
+    def dict(self):
+        return asdict(self)
 
     @staticmethod
     def from_log(log:str):
@@ -29,7 +32,7 @@ class POSI:
             int(tokens[6])
         )
         return posi
-        
+
 
 @dataclass
 class WIFI:
@@ -42,6 +45,9 @@ class WIFI:
     freq: int
     rssi: int
 
+    def dict(self):
+        return asdict(self)
+
     @staticmethod
     def from_log(log:str):
         tokens = log.strip().split(";")
@@ -51,8 +57,8 @@ class WIFI:
         wifi = WIFI(
             float(tokens[1]),
             float(tokens[2]),
-            str(tokens[3]),
-            str(tokens[4]),
+            str(tokens[3]).strip(),
+            str(tokens[4]).strip(),
             int(tokens[5]),
             int(tokens[6])
         )
@@ -67,6 +73,12 @@ class WifiFingerprint:
 
     def add_wifi(self, wifi:WIFI):
         self.wifi_dict[wifi.mac] = wifi
+
+    def wifi_cnt(self):
+        return len(self.wifi_dict)
+        
+    def dict(self):
+        return asdict(self)
 
     @staticmethod
     def create(timestamp: float):

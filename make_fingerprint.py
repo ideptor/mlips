@@ -2,7 +2,9 @@
 from typing import Tuple, List
 from data import WifiFingerprint, POSI, WIFI
 
-def filtering(trace_file_name: str, must_include_head: List[str]) -> List[str]:
+def filtering(trace_file_name: str, 
+            must_include_head: List[str] =["WIFI;", "POSI;"]) \
+                -> List[str]:
 
     filtered_lines = []
     with open(trace_file_name, "r") as f:
@@ -19,7 +21,7 @@ def filtering(trace_file_name: str, must_include_head: List[str]) -> List[str]:
 
 
 
-def bind_wifi_fingerprints(logs:str) -> \
+def bind_wifi_fingerprints(logs:List[str]) -> \
         Tuple[List[WifiFingerprint], List[POSI]]:
 
     posis = []
@@ -32,7 +34,7 @@ def bind_wifi_fingerprints(logs:str) -> \
     for log in logs:
 
         if "POSI;" in log[:5]:
-            if len(cur_fp.wifi_dict.keys()) > 0:
+            if cur_fp.wifi_cnt() > 0:
                 fps.append(cur_fp)
             posi = POSI.from_log(log)
             posis.append(posi)
@@ -43,7 +45,8 @@ def bind_wifi_fingerprints(logs:str) -> \
         if "WIFI;" in log[:5]:
             wifi = WIFI.from_log(log)
             if (wifi.timestamp - cur_timestamp) > TIME_DURATION:
-                fps.append(cur_fp)
+                if cur_fp.wifi_cnt() > 0:
+                    fps.append(cur_fp)
                 cur_timestamp = wifi.timestamp
                 cur_fp = WifiFingerprint.create(cur_timestamp)
             cur_fp.add_wifi(wifi)
@@ -51,4 +54,4 @@ def bind_wifi_fingerprints(logs:str) -> \
     if len(cur_fp.wifi_dict.keys()) > 0:
         fps.append(cur_fp)
 
-    return (fps, posi)
+    return (fps, posis)
