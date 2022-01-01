@@ -12,4 +12,3 @@ def test_filtering():
     # then
     assert "ACCE;" not in filtered_lines[:100]
     assert len(filtered_lines) == 4
-

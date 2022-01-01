@@ -1,5 +1,5 @@
 
-def filtering(trace_file_name: str, must_include_head: list):
+def filtering(trace_file_name: str, must_include_head: list) -> list:
 
     filtered_lines = []
     with open(trace_file_name, "r") as f:
@@ -13,3 +13,4 @@ def filtering(trace_file_name: str, must_include_head: list):
                     continue
     
     return filtered_lines
+
