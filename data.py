@@ -127,7 +127,7 @@ def save_json(file_name: str,
     f.write(json.dumps(json_list, indent=2))
     print(f'"{file_name}" has been created.')
 
-
+"""
 def load_wifi_fingerprints_from_json_file(file_name: str) -> List[WifiFingerprint]:
 
     with open(file_name, "r") as f:
@@ -138,4 +138,25 @@ def load_wifi_fingerprints_from_json_file(file_name: str) -> List[WifiFingerprin
         fps.append(WifiFingerprint.from_dict(fp))
 
     return fps
-    
+
+def load_posis_from_json_file(file_name: str) -> List[POSI]:
+
+    with open(file_name, "r") as f:
+        posi_list = json.load(f)
+
+    posis = []
+    for posi in posi_list:
+        posis.append(POSI.from_dict(posi))
+
+    return posis    
+"""
+
+def load_from_json_file(file_name:str, data_class: Union[POSI, WifiFingerprint]) -> List:
+    with open(file_name, "r") as f:
+        dict_list = json.load(f)
+
+    collection = []
+    for item in dict_list:
+        collection.append(data_class.from_dict(item))
+
+    return collection   
