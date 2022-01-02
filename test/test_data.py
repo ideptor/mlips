@@ -2,7 +2,7 @@ import json
 import os
 from pathlib import Path
 
-from data import POSI, WIFI
+from data import POSI, WIFI, WifiFingerprint
 import data
 import make_fingerprint as mf
 
@@ -118,10 +118,8 @@ def test_posi_save_json():
     "bulding_id": 60
   }
 ]'''
-    try:
-        os.remove(posi_json_file_name)
-    except:
-        pass
+    
+    os.remove(posi_json_file_name)
 
 
 def test_wifi_fingerprints_save_json():
@@ -150,6 +148,7 @@ WIFI;64.373;12313.167;SSID_0007;20:19:00:00:00:52;2412;-33
     assert json_str == '''[
   {
     "timestamp": 64.373,
+    "last_landmark": 1,
     "wifi_dict": {
       "20:19:00:00:00:53": {
         "timestamp": 64.373,
@@ -167,13 +166,36 @@ WIFI;64.373;12313.167;SSID_0007;20:19:00:00:00:52;2412;-33
         "freq": 2412,
         "rssi": -33
       }
-    }
+    },
+    "latitude": null,
+    "longitude": null
   }
 ]'''
     
-    try:
-        os.remove(fps_json_file_name)
-    except:
-        pass
+    os.remove(fps_json_file_name)
 
     
+def test_create_wififingerprint_from_json_file():
+
+    # given
+    json_file_name = "test/data/test_fingerprint.json"
+
+    # when
+    fp = WifiFingerprint.from_json_file(json_file_name)
+
+    # then
+    assert fp is not None
+    assert fp.wifi_cnt() == 38
+
+
+def test_create_posi_from_json_file():
+
+    # given
+    json_file_name = "test/data/test_posi.json"
+
+    # when
+    posi = POSI.from_json_file(json_file_name)
+
+    # then
+    assert posi is not None
+    assert posi.landmark == 4

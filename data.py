@@ -33,6 +33,13 @@ class POSI:
         )
         return posi
 
+    @staticmethod
+    def from_json_file(json_file_name:str):
+        with open(json_file_name, "r") as f:
+            dict_ = json.load(f)
+            posi = POSI(**dict_)
+
+        return posi
 
 @dataclass
 class WIFI:
@@ -71,7 +78,9 @@ class WifiFingerprint:
     timestamp: float
     last_landmark: int
     wifi_dict: Dict[str, WIFI]
-
+    latitude: float = None
+    longitude: float = None
+    
     def add_wifi(self, wifi:WIFI):
         self.wifi_dict[wifi.mac] = wifi
 
@@ -88,6 +97,14 @@ class WifiFingerprint:
             last_landmark,
             dict()
         )
+        return fp
+
+    @staticmethod
+    def from_json_file(json_file_name:str):
+        with open(json_file_name, "r") as f:
+            dict_ = json.load(f)
+            fp = WifiFingerprint(**dict_)
+
         return fp
 
 def save_json(file_name: str,

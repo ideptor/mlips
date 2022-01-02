@@ -1,0 +1,34 @@
+[
+  {
+    "timestamp": 61.472,
+    "landmark": 1,
+    "latitude": 43.7182527866061,
+    "longitude": 10.4215241271896,
+    "floor_id": 1,
+    "bulding_id": 60
+  },
+  {
+    "timestamp": 115.986,
+    "landmark": 2,
+    "latitude": 43.7185692958496,
+    "longitude": 10.4220670511718,
+    "floor_id": 1,
+    "bulding_id": 60
+  },
+  {
+    "timestamp": 146.747,
+    "landmark": 3,
+    "latitude": 43.7185692958496,
+    "longitude": 10.4220670511718,
+    "floor_id": 1,
+    "bulding_id": 60
+  },
+  {
+    "timestamp": 195.779,
+    "landmark": 4,
+    "latitude": 43.7182527866061,
+    "longitude": 10.4215241271896,
+    "floor_id": 1,
+    "bulding_id": 60
+  }
+]

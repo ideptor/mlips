@@ -1,5 +1,8 @@
 
+from collections import defaultdict
 from typing import Tuple, List
+import copy
+
 from data import WifiFingerprint, POSI, WIFI
 
 def filtering(trace_file_name: str, 
@@ -57,3 +60,16 @@ def bind_wifi_fingerprints(logs:List[str]) -> \
         fps.append(cur_fp)
 
     return (fps, posis)
+
+"""
+def fill_latitude_longitude(fps:List[WifiFingerprint], posis:List[POSI]) -> List[WifiFingerprint]:
+    # only work for building id: 60
+
+    landmark_fps_dict = defaultdict(lambda: List[WifiFingerprint])
+    for fp in fps:
+        if fp.last_landmark in [1, 3]:
+            landmark_fps_dict[fp.last_landmark].append(copy.deepcopy(fp))
+
+    landmark
+
+"""
