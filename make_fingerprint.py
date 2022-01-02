@@ -61,15 +61,34 @@ def bind_wifi_fingerprints(logs:List[str]) -> \
 
     return (fps, posis)
 
-"""
-def fill_latitude_longitude(fps:List[WifiFingerprint], posis:List[POSI]) -> List[WifiFingerprint]:
-    # only work for building id: 60
+    
+def fill_latitude_longitude(
+    fps:List[WifiFingerprint], 
+    posis:List[POSI], 
+    exclude_landmark = [None, 2,4]) -> List[WifiFingerprint]:
 
-    landmark_fps_dict = defaultdict(lambda: List[WifiFingerprint])
+    posi_dict = dict(zip([p.landmark for p in posis], posis))
+    
+    landmark_fps_dict = defaultdict(lambda: list())
     for fp in fps:
-        if fp.last_landmark in [1, 3]:
+        if fp.last_landmark not in exclude_landmark:
             landmark_fps_dict[fp.last_landmark].append(copy.deepcopy(fp))
 
-    landmark
+    for landmark, fps in landmark_fps_dict.items():
 
-"""
+        start_posi = posi_dict[landmark]
+        end_posi = posi_dict[landmark+1]
+
+        start = (start_posi.latitude, start_posi.longitude)
+        end = (end_posi.latitude, end_posi.longitude)
+        
+        latitude_unit = (end[0] - start[0]) / len(fps)
+        longitude_unit = (end[1] - start[1]) / len(fps)
+        
+        for idx, fp in enumerate(fps):
+            fp.latitude = start[0] + (idx+1) * latitude_unit
+            fp.longitude = start[1] + (idx+1) * longitude_unit
+            print(f"{fp.last_landmark} / {fp.latitude:10.7f}, {fp.longitude:10.7f}")
+            
+        
+    return fps
