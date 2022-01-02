@@ -6,6 +6,7 @@ import make_fingerprint as mf
 import data
 
 
+# python run.py --trace-log data
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description='covert tracelog to wifi fingerprint csv')
@@ -22,7 +23,7 @@ if __name__ == "__main__":
             continue
 
         fps, posis = mf.bind_wifi_fingerprints(
-            mf.filtering(log_file))
+            mf.load_logfile(log_file))
 
         data.save_json(f"{log_file[:-4]}_fps.json", fps)
         data.save_json(f"{log_file[:-4]}_posis.json", posis)

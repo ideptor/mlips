@@ -2,6 +2,7 @@
 from typing import Dict, List, Union
 from dataclasses import asdict, dataclass
 import json
+import pandas as pd
 
 @dataclass
 class POSI:
@@ -74,6 +75,10 @@ class WIFI:
         )
         return wifi
 
+    @staticmethod
+    def from_dict(wifi_dict: dict):
+        return WIFI(**wifi_dict)
+
 
 @dataclass
 class WifiFingerprint:
@@ -81,6 +86,7 @@ class WifiFingerprint:
     timestamp: float
     last_landmark: int
     wifi_dict: Dict[str, WIFI]
+    region: int = None
     latitude: float = None
     longitude: float = None
     
@@ -111,7 +117,12 @@ class WifiFingerprint:
 
     @staticmethod
     def from_dict(fp_dict: dict):
-        return WifiFingerprint(**fp_dict)
+        fp = WifiFingerprint(**fp_dict)
+        wifi_dict = {}
+        for w, v in fp_dict['wifi_dict'].items():
+            wifi_dict[w] = WIFI.from_dict(v)
+        fp.wifi_dict = wifi_dict
+        return fp
     
 
 def save_json(file_name: str,
@@ -135,3 +146,28 @@ def load_from_json_file(file_name:str, data_class: Union[POSI, WifiFingerprint])
         collection.append(data_class.from_dict(item))
 
     return collection   
+
+
+def save_fingerprint_as_csv(file_name: str, fps: List[WifiFingerprint]):
+    mac_set = set()
+    for fp in fps:
+        for mac in fp.wifi_dict.keys():
+            mac_set.add(mac)
+
+    columns = ['timestamp', 'region', 'latitude', 'longitude']
+    columns.extend(list(mac_set))
+    
+    data = []
+    for fp in fps:
+        row = [fp.timestamp, fp.region, fp.latitude, fp.longitude]
+        for mac in mac_set:
+            if mac in fp.wifi_dict.keys():
+                row.append(fp.wifi_dict[mac].rssi)
+                #row.append(fp.wifi_dict[mac]['rssi'])
+            else:
+                row.append(None)
+                
+        data.append(row)
+        
+    data_frame = pd.DataFrame(data, columns=columns)
+    data_frame.to_csv(file_name, index=False)

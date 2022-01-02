@@ -1,4 +1,5 @@
-import json
+import os
+import pandas as pd
 
 import data
 import make_fingerprint as mf
@@ -44,7 +45,7 @@ def test_bind_wifi_fingerprints():
 
 
 
-def test_fill_lat_long():
+def test_fill_latitude_longitude():
 
     # given
 
@@ -67,3 +68,42 @@ def test_fill_lat_long():
     # then
     assert fps_new[0].latitude is not None
     assert fps_new[0].longitude is not None
+
+
+def test_save_fingerprint_as_csv():
+
+    # given
+    posis = data.load_from_json_file(
+        "test/data/test_posis.json", data.POSI
+    )
+    assert len(posis) == 4
+
+    fps = data.load_from_json_file(
+        "test/data/test_fps.json", data.WifiFingerprint
+    )
+    assert len(fps) == 50
+    fps = mf.fill_latitude_longitude(fps, posis)
+
+    assert fps[0].latitude is not None
+    assert fps[0].longitude is not None
+    assert fps[0].region is None
+    assert len(fps[0].wifi_dict.keys()) == 34
+    assert str(list(fps[0].wifi_dict.values())[0]) == "WIFI(timestamp=64.373, sensor_timestamp=12313.167, ssid_name='SSID_0012', mac='20:19:00:00:00:53', freq=2412, rssi=-32)"
+
+    fps = mf.bucketization(fps)
+    assert fps[0].region is not None
+
+    test_csv_file_name = "test.csv"
+    if os.path.isfile(test_csv_file_name):
+        os.remove(test_csv_file_name)
+    assert os.path.isfile(test_csv_file_name) is False
+    
+    # when 
+    data.save_fingerprint_as_csv(test_csv_file_name, fps)
+    
+    # then
+    assert os.path.isfile(test_csv_file_name) is True
+
+    df = pd.read_csv(test_csv_file_name)
+    
+    os.remove(test_csv_file_name)

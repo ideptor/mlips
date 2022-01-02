@@ -292,6 +292,7 @@
         "rssi": -91
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -628,6 +629,7 @@
         "rssi": -93
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -940,6 +942,7 @@
         "rssi": -91
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -1252,6 +1255,7 @@
         "rssi": -89
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -1596,6 +1600,7 @@
         "rssi": -92
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -1964,6 +1969,7 @@
         "rssi": -92
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -2364,6 +2370,7 @@
         "rssi": -92
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -2844,6 +2851,7 @@
         "rssi": -94
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -3196,6 +3204,7 @@
         "rssi": -90
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -3564,6 +3573,7 @@
         "rssi": -91
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -3924,6 +3934,7 @@
         "rssi": -90
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -4180,6 +4191,7 @@
         "rssi": -90
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -4532,6 +4544,7 @@
         "rssi": -92
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -4876,6 +4889,7 @@
         "rssi": -91
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -5244,6 +5258,7 @@
         "rssi": -91
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -5476,6 +5491,7 @@
         "rssi": -86
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -5756,6 +5772,7 @@
         "rssi": -92
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -6084,6 +6101,7 @@
         "rssi": -92
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -6508,6 +6526,7 @@
         "rssi": -92
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -6748,6 +6767,7 @@
         "rssi": -85
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -6996,6 +7016,7 @@
         "rssi": -86
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -7292,6 +7313,7 @@
         "rssi": -91
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -7580,6 +7602,7 @@
         "rssi": -94
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -7820,6 +7843,7 @@
         "rssi": -92
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -8084,6 +8108,7 @@
         "rssi": -96
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -8356,6 +8381,7 @@
         "rssi": -94
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -8644,6 +8670,7 @@
         "rssi": -93
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -9028,6 +9055,7 @@
         "rssi": -95
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -9492,6 +9520,7 @@
         "rssi": -94
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -9916,6 +9945,7 @@
         "rssi": -93
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -10604,6 +10634,7 @@
         "rssi": -90
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -11356,6 +11387,7 @@
         "rssi": -90
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -12068,6 +12100,7 @@
         "rssi": -93
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -12844,6 +12877,7 @@
         "rssi": -93
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -13628,6 +13662,7 @@
         "rssi": -92
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -14412,6 +14447,7 @@
         "rssi": -89
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -15148,6 +15184,7 @@
         "rssi": -92
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -15852,6 +15889,7 @@
         "rssi": -91
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -16324,6 +16362,7 @@
         "rssi": -89
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -16668,6 +16707,7 @@
         "rssi": -92
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -16860,6 +16900,7 @@
         "rssi": -92
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -17084,6 +17125,7 @@
         "rssi": -93
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -17316,6 +17358,7 @@
         "rssi": -93
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -17524,6 +17567,7 @@
         "rssi": -90
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -17828,6 +17872,7 @@
         "rssi": -91
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -18196,6 +18241,7 @@
         "rssi": -92
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -18420,6 +18466,7 @@
         "rssi": -86
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -18700,6 +18747,7 @@
         "rssi": -96
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -19084,6 +19132,7 @@
         "rssi": -91
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   },
@@ -19396,6 +19445,7 @@
         "rssi": -89
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   }

@@ -90,3 +90,26 @@ def fill_latitude_longitude(
             fps_new.append(fp)
  
     return fps_new
+
+
+def bucketization(fps: List[WifiFingerprint], num_of_class:int =5):
+    max_latitude = -1
+    min_latitude = 1000
+    
+    fps_new = []
+    
+    for fp in fps:
+        if max_latitude < fp.latitude:
+            max_latitude = fp.latitude
+        if min_latitude > fp.latitude:
+            min_latitude = fp.latitude
+    latitude_unit = (max_latitude - min_latitude) / num_of_class
+    
+    for fp in fps:
+        category = round((fp.latitude - min_latitude) / latitude_unit)
+        fp_new = copy.deepcopy(fp)
+        fp_new.region = category
+        
+        fps_new.append(fp_new)
+        
+    return fps_new

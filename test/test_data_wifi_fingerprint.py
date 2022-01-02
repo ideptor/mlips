@@ -46,6 +46,19 @@ def test_wifi_as_dict():
     assert json.dumps(wifi.dict()) == '{"timestamp": 64.373, "sensor_timestamp": 12313.167, "ssid_name": "SSID_0012", "mac": "20:19:00:00:00:53", "freq": 2412, "rssi": -32}'
 
 
+def test_wifi_from_dict():
+
+    # given
+    wifi_json_str = '{"timestamp": 64.373, "sensor_timestamp": 12313.167, "ssid_name": "SSID_0012", "mac": "20:19:00:00:00:53", "freq": 2412, "rssi": -32}'
+    wifi_dict = json.loads(wifi_json_str)
+
+    # when
+    wifi = WIFI(**wifi_dict)
+
+    # then
+    assert type(wifi) is WIFI
+
+
 def test_wifi_fingerprints_save_json():
     # given
     logs = '''
@@ -91,13 +104,14 @@ WIFI;64.373;12313.167;SSID_0007;20:19:00:00:00:52;2412;-33
         "rssi": -33
       }
     },
+    "region": null,
     "latitude": null,
     "longitude": null
   }
 ]'''
     
     os.remove(fps_json_file_name)
-    
+
 
 def test_create_wifi_fingerprint_from_dict():
 
