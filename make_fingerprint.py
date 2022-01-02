@@ -5,7 +5,7 @@ import copy
 
 from data import WifiFingerprint, POSI, WIFI
 
-def filtering(trace_file_name: str, 
+def load_logfile(trace_file_name: str, 
             must_include_head: List[str] =["WIFI;", "POSI;"]) \
                 -> List[str]:
 
