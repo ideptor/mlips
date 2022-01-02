@@ -3,6 +3,7 @@ from typing import Dict, List, Union
 from dataclasses import asdict, dataclass
 import json
 import pandas as pd
+import os
 
 @dataclass
 class POSI:
@@ -163,7 +164,6 @@ def save_fingerprint_as_csv(file_name: str, fps: List[WifiFingerprint]):
         for mac in mac_set:
             if mac in fp.wifi_dict.keys():
                 row.append(fp.wifi_dict[mac].rssi)
-                #row.append(fp.wifi_dict[mac]['rssi'])
             else:
                 row.append(None)
                 
@@ -171,3 +171,4 @@ def save_fingerprint_as_csv(file_name: str, fps: List[WifiFingerprint]):
         
     data_frame = pd.DataFrame(data, columns=columns)
     data_frame.to_csv(file_name, index=False)
+    print(f"exported: {os.path.abspath(file_name)}")

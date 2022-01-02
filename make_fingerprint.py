@@ -106,7 +106,9 @@ def bucketization(fps: List[WifiFingerprint], num_of_class:int =5):
     latitude_unit = (max_latitude - min_latitude) / num_of_class
     
     for fp in fps:
-        category = round((fp.latitude - min_latitude) / latitude_unit)
+        category = int((fp.latitude - min_latitude) / latitude_unit)
+        if category >= num_of_class:
+            category = num_of_class - 1
         fp_new = copy.deepcopy(fp)
         fp_new.region = category
         
