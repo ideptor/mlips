@@ -33,12 +33,13 @@ class POSI:
         )
         return posi
 
+    
     @staticmethod
     def from_json_file(json_file_name:str):
         with open(json_file_name, "r") as f:
             posi_dict = json.load(f)
             return POSI.from_dict(posi_dict)
-
+    
     @staticmethod
     def from_dict(posi_dict: dict):
         return POSI(**posi_dict)
@@ -101,20 +102,17 @@ class WifiFingerprint:
         )
         return fp
 
+    
     @staticmethod
     def from_json_file(json_file_name:str):
         with open(json_file_name, "r") as f:
-            return WifiFingerprint.from_json_str(f.read())
-
-    @staticmethod
-    def from_json_str(json_str: json):
-        fp_dict = json.loads(json_str)
-        return WifiFingerprint.from_dict(fp_dict)
+            fp_dict = json.load(f)
+            return WifiFingerprint.from_dict(fp_dict)
 
     @staticmethod
     def from_dict(fp_dict: dict):
         return WifiFingerprint(**fp_dict)
-
+    
 
 def save_json(file_name: str,
         collection: List[Union[POSI, WifiFingerprint]]):
@@ -127,29 +125,6 @@ def save_json(file_name: str,
     f.write(json.dumps(json_list, indent=2))
     print(f'"{file_name}" has been created.')
 
-"""
-def load_wifi_fingerprints_from_json_file(file_name: str) -> List[WifiFingerprint]:
-
-    with open(file_name, "r") as f:
-        fp_list = json.load(f)
-
-    fps = []
-    for fp in fp_list:
-        fps.append(WifiFingerprint.from_dict(fp))
-
-    return fps
-
-def load_posis_from_json_file(file_name: str) -> List[POSI]:
-
-    with open(file_name, "r") as f:
-        posi_list = json.load(f)
-
-    posis = []
-    for posi in posi_list:
-        posis.append(POSI.from_dict(posi))
-
-    return posis    
-"""
 
 def load_from_json_file(file_name:str, data_class: Union[POSI, WifiFingerprint]) -> List:
     with open(file_name, "r") as f:

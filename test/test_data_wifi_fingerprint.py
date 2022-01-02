@@ -1,7 +1,7 @@
 import json
 import os
 
-from data import POSI, WIFI, WifiFingerprint
+from data import WIFI, WifiFingerprint
 import data
 import make_fingerprint as mf
 
@@ -97,20 +97,7 @@ WIFI;64.373;12313.167;SSID_0007;20:19:00:00:00:52;2412;-33
 ]'''
     
     os.remove(fps_json_file_name)
-
     
-def test_create_wififingerprint_from_json_file():
-
-    # given
-    json_file_name = "test/data/test_fingerprint.json"
-
-    # when
-    fp = WifiFingerprint.from_json_file(json_file_name)
-
-    # then
-    assert fp is not None
-    assert fp.wifi_cnt() == 38
-
 
 def test_create_wifi_fingerprint_from_dict():
 
@@ -132,7 +119,7 @@ def test_create_wifi_fingerprints_from_json_file():
     json_file_name = "test/data/test_fps.json"
 
     # when
-    fps = data.load_wifi_fingerprints_from_json_file(json_file_name)
+    fps = data.load_from_json_file(json_file_name, WifiFingerprint) 
 
     # then
     assert fps is not None

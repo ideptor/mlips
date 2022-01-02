@@ -84,10 +84,10 @@ def test_create_posi_from_dict():
 
     # given
     json_file_name = "test/data/test_posi.json"
-    fp_dict = POSI.from_json_file(json_file_name).dict()
+    posi_dict = POSI.from_json_file(json_file_name).dict()
 
     # when
-    posi = POSI.from_dict(fp_dict)
+    posi = POSI.from_dict(posi_dict)
 
     # then
     assert posi is not None
@@ -108,3 +108,15 @@ def test_create_posi_from_json_file():
     assert posi.landmark == 4
 
 
+def test_create_posis_from_json_file():
+    
+    # given
+    json_file_name = "test/data/test_posis.json"
+
+    # when
+    #posis = data.load_posis_from_json_file(json_file_name)
+    posis = data.load_from_json_file(json_file_name, POSI) 
+
+    # then
+    assert posis is not None
+    assert len(posis) == 4

@@ -1,4 +1,6 @@
 import json
+
+import data
 import make_fingerprint as mf
 
 def test_filtering():
@@ -41,17 +43,24 @@ def test_bind_wifi_fingerprints():
     assert len(fps) == 3
 
 
-"""
+
 def test_fill_lat_long():
 
     # given
-    with open("test/data/test_fps.json", "r") as f:
-        fps = json.load(f)
-    assert len(fps) == 50
 
-    with open("test/data/test_posis.json", "r") as f:
-        posis = json.load(f)
+    posis = data.load_from_json_file(
+        "test/data/test_posis.json", data.POSI
+    )
     assert len(posis) == 4
+
+    fps = data.load_from_json_file(
+        "test/data/test_fps.json", data.WifiFingerprint
+    )
+    assert len(fps) == 50
+    assert fps[0].latitude is None
+    assert fps[0].longitude is None
+
+
 
     # when
     fps_new = mf.fill_latitude_longitude(fps, posis)
@@ -59,4 +68,3 @@ def test_fill_lat_long():
     # then
     assert fps_new[0].latitude is not None
     assert fps_new[0].longitude is not None
-"""
