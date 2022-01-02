@@ -27,9 +27,10 @@ def bind_wifi_fingerprints(logs:List[str]) -> \
     posis = []
     fps = []
     TIME_DURATION = 3
-    cur_timestamp = 0
+    cur_timestamp = 0.
+    cur_landmark = None
     
-    cur_fp = WifiFingerprint.create(None)
+    cur_fp = WifiFingerprint.create()
 
     for log in logs:
 
@@ -39,8 +40,9 @@ def bind_wifi_fingerprints(logs:List[str]) -> \
             posi = POSI.from_log(log)
             posis.append(posi)
             cur_timestamp = posi.timestamp
+            cur_landmark = posi.landmark
 
-            cur_fp = WifiFingerprint.create(cur_timestamp)
+            cur_fp = WifiFingerprint.create(cur_timestamp, cur_landmark)
 
         if "WIFI;" in log[:5]:
             wifi = WIFI.from_log(log)
@@ -48,7 +50,7 @@ def bind_wifi_fingerprints(logs:List[str]) -> \
                 if cur_fp.wifi_cnt() > 0:
                     fps.append(cur_fp)
                 cur_timestamp = wifi.timestamp
-                cur_fp = WifiFingerprint.create(cur_timestamp)
+                cur_fp = WifiFingerprint.create(cur_timestamp, cur_landmark)
             cur_fp.add_wifi(wifi)
 
     if len(cur_fp.wifi_dict.keys()) > 0:

@@ -69,6 +69,7 @@ class WIFI:
 class WifiFingerprint:
 
     timestamp: float
+    last_landmark: int
     wifi_dict: Dict[str, WIFI]
 
     def add_wifi(self, wifi:WIFI):
@@ -81,9 +82,10 @@ class WifiFingerprint:
         return asdict(self)
 
     @staticmethod
-    def create(timestamp: float):
+    def create(timestamp: float=None, last_landmark=None):
         fp = WifiFingerprint(
             timestamp,
+            last_landmark,
             dict()
         )
         return fp
