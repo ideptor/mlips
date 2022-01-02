@@ -86,7 +86,7 @@ def fill_latitude_longitude(
         for idx, fp in enumerate(fps):
             fp.latitude = start.latitude + (idx+1) * latitude_unit
             fp.longitude = start.longitude + (idx+1) * longitude_unit
-            print(f"{fp.last_landmark} / {fp.latitude:10.7f}, {fp.longitude:10.7f}")
+            #print(f"{fp.last_landmark} / {fp.latitude:10.7f}, {fp.longitude:10.7f}")
             fps_new.append(fp)
  
     return fps_new
