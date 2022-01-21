@@ -1,0 +1,27 @@
+[
+  {
+    "timestamp": 64.373,
+    "last_landmark": 1,
+    "wifi_dict": {
+      "20:19:00:00:00:53": {
+        "timestamp": 64.373,
+        "sensor_timestamp": 12313.167,
+        "ssid_name": "SSID_0012",
+        "mac": "20:19:00:00:00:53",
+        "freq": 2412,
+        "rssi": -32
+      },
+      "20:19:00:00:00:52": {
+        "timestamp": 64.373,
+        "sensor_timestamp": 12313.167,
+        "ssid_name": "SSID_0007",
+        "mac": "20:19:00:00:00:52",
+        "freq": 2412,
+        "rssi": -33
+      }
+    },
+    "region": null,
+    "latitude": null,
+    "longitude": null
+  }
+]
