@@ -1,0 +1,140 @@
+Epoch [1/20], Step [100/600], Loss: 2.319158
+Epoch [1/20], Step [200/600], Loss: 2.218178
+Epoch [1/20], Step [300/600], Loss: 2.329340
+Epoch [1/20], Step [400/600], Loss: 2.258193
+Epoch [1/20], Step [500/600], Loss: 2.078577
+Epoch [1/20], Step [600/600], Loss: 1.370591
+Epoch [1/20] summary, train_loss:2.07386924, test_loss:1.57445238 duration: 50.6s
+Epoch [2/20], Step [100/600], Loss: 0.365073
+Epoch [2/20], Step [200/600], Loss: 1.005602
+Epoch [2/20], Step [300/600], Loss: 3.881430
+Epoch [2/20], Step [400/600], Loss: 0.110262
+Epoch [2/20], Step [500/600], Loss: 0.519022
+Epoch [2/20], Step [600/600], Loss: 0.039618
+Epoch [2/20] summary, train_loss:0.99960473, test_loss:1.10219902 duration: 52.2s
+Epoch [3/20], Step [100/600], Loss: 0.304920
+Epoch [3/20], Step [200/600], Loss: 0.589207
+Epoch [3/20], Step [300/600], Loss: 0.211951
+Epoch [3/20], Step [400/600], Loss: 0.282834
+Epoch [3/20], Step [500/600], Loss: 5.588807
+Epoch [3/20], Step [600/600], Loss: 0.639636
+Epoch [3/20] summary, train_loss:0.84078559, test_loss:0.76426196 duration: 52.7s
+Epoch [4/20], Step [100/600], Loss: 0.259393
+Epoch [4/20], Step [200/600], Loss: 0.092251
+Epoch [4/20], Step [300/600], Loss: 1.715026
+Epoch [4/20], Step [400/600], Loss: 0.781902
+Epoch [4/20], Step [500/600], Loss: 0.042549
+Epoch [4/20], Step [600/600], Loss: 0.164583
+Epoch [4/20] summary, train_loss:0.63399629, test_loss:0.67726162 duration: 52.4s
+Epoch [5/20], Step [100/600], Loss: 0.314946
+Epoch [5/20], Step [200/600], Loss: 0.502216
+Epoch [5/20], Step [300/600], Loss: 0.615338
+Epoch [5/20], Step [400/600], Loss: 0.679815
+Epoch [5/20], Step [500/600], Loss: 4.485899
+Epoch [5/20], Step [600/600], Loss: 0.925878
+Epoch [5/20] summary, train_loss:0.72354688, test_loss:0.78006870 duration: 52.5s
+Epoch [6/20], Step [100/600], Loss: 1.121517
+Epoch [6/20], Step [200/600], Loss: 6.282223
+Epoch [6/20], Step [300/600], Loss: 0.024310
+Epoch [6/20], Step [400/600], Loss: 0.013230
+Epoch [6/20], Step [500/600], Loss: 0.443711
+Epoch [6/20], Step [600/600], Loss: 0.002121
+Epoch [6/20] summary, train_loss:0.59436405, test_loss:0.47056499 duration: 52.4s
+Epoch [7/20], Step [100/600], Loss: 0.176625
+Epoch [7/20], Step [200/600], Loss: 0.130982
+Epoch [7/20], Step [300/600], Loss: 0.602253
+Epoch [7/20], Step [400/600], Loss: 1.670380
+Epoch [7/20], Step [500/600], Loss: 0.015342
+Epoch [7/20], Step [600/600], Loss: 0.002267
+Epoch [7/20] summary, train_loss:0.61934620, test_loss:0.58340085 duration: 52.4s
+Epoch [8/20], Step [100/600], Loss: 0.236931
+Epoch [8/20], Step [200/600], Loss: 0.482880
+Epoch [8/20], Step [300/600], Loss: 0.305488
+Epoch [8/20], Step [400/600], Loss: 0.179558
+Epoch [8/20], Step [500/600], Loss: 0.180883
+Epoch [8/20], Step [600/600], Loss: 0.340710
+Epoch [8/20] summary, train_loss:0.48458564, test_loss:0.55056760 duration: 52.2s
+Epoch [9/20], Step [100/600], Loss: 0.342790
+Epoch [9/20], Step [200/600], Loss: 0.001686
+Epoch [9/20], Step [300/600], Loss: 0.000404
+Epoch [9/20], Step [400/600], Loss: 3.901573
+Epoch [9/20], Step [500/600], Loss: 4.166380
+Epoch [9/20], Step [600/600], Loss: 0.230375
+Epoch [9/20] summary, train_loss:0.47632681, test_loss:0.65257225 duration: 52.2s
+Epoch [10/20], Step [100/600], Loss: 2.445465
+Epoch [10/20], Step [200/600], Loss: 0.002297
+Epoch [10/20], Step [300/600], Loss: 0.050133
+Epoch [10/20], Step [400/600], Loss: 0.072624
+Epoch [10/20], Step [500/600], Loss: 0.024248
+Epoch [10/20], Step [600/600], Loss: 0.006529
+Epoch [10/20] summary, train_loss:0.45368978, test_loss:0.55593371 duration: 52.6s
+Epoch [11/20], Step [100/600], Loss: 0.995979
+Epoch [11/20], Step [200/600], Loss: 0.151387
+Epoch [11/20], Step [300/600], Loss: 1.736009
+Epoch [11/20], Step [400/600], Loss: 0.031172
+Epoch [11/20], Step [500/600], Loss: 0.158884
+Epoch [11/20], Step [600/600], Loss: 0.595737
+Epoch [11/20] summary, train_loss:0.43810634, test_loss:0.35110920 duration: 52.3s
+Epoch [12/20], Step [100/600], Loss: 0.000327
+Epoch [12/20], Step [200/600], Loss: 0.006990
+Epoch [12/20], Step [300/600], Loss: 0.021710
+Epoch [12/20], Step [400/600], Loss: 0.035504
+Epoch [12/20], Step [500/600], Loss: 0.321039
+Epoch [12/20], Step [600/600], Loss: 0.002933
+Epoch [12/20] summary, train_loss:0.39259465, test_loss:0.39880033 duration: 79.8s
+Epoch [13/20], Step [100/600], Loss: 0.023810
+Epoch [13/20], Step [200/600], Loss: 0.686620
+Epoch [13/20], Step [300/600], Loss: 2.328296
+Epoch [13/20], Step [400/600], Loss: 0.042824
+Epoch [13/20], Step [500/600], Loss: 0.218109
+Epoch [13/20], Step [600/600], Loss: 0.005186
+Epoch [13/20] summary, train_loss:0.50352196, test_loss:0.49899033 duration: 80.3s
+Epoch [14/20], Step [100/600], Loss: 0.505152
+Epoch [14/20], Step [200/600], Loss: 0.376465
+Epoch [14/20], Step [300/600], Loss: 0.130297
+Epoch [14/20], Step [400/600], Loss: 0.148319
+Epoch [14/20], Step [500/600], Loss: 0.055194
+Epoch [14/20], Step [600/600], Loss: 0.000298
+Epoch [14/20] summary, train_loss:0.41291050, test_loss:0.54575789 duration: 80.6s
+Epoch [15/20], Step [100/600], Loss: 0.046892
+Epoch [15/20], Step [200/600], Loss: 0.043193
+Epoch [15/20], Step [300/600], Loss: 0.024042
+Epoch [15/20], Step [400/600], Loss: 0.006777
+Epoch [15/20], Step [500/600], Loss: 0.078675
+Epoch [15/20], Step [600/600], Loss: 0.014949
+Epoch [15/20] summary, train_loss:0.34326492, test_loss:0.18903503 duration: 80.8s
+Epoch [16/20], Step [100/600], Loss: 0.000761
+Epoch [16/20], Step [200/600], Loss: 0.012827
+Epoch [16/20], Step [300/600], Loss: 0.005556
+Epoch [16/20], Step [400/600], Loss: 0.009479
+Epoch [16/20], Step [500/600], Loss: 0.189897
+Epoch [16/20], Step [600/600], Loss: 0.094418
+Epoch [16/20] summary, train_loss:0.41004340, test_loss:0.48395482 duration: 64.1s
+Epoch [17/20], Step [100/600], Loss: 0.022668
+Epoch [17/20], Step [200/600], Loss: 3.465367
+Epoch [17/20], Step [300/600], Loss: 0.034182
+Epoch [17/20], Step [400/600], Loss: 0.527719
+Epoch [17/20], Step [500/600], Loss: 0.020576
+Epoch [17/20], Step [600/600], Loss: 0.039682
+Epoch [17/20] summary, train_loss:0.41306798, test_loss:0.40070385 duration: 81.7s
+Epoch [18/20], Step [100/600], Loss: 0.127931
+Epoch [18/20], Step [200/600], Loss: 0.034102
+Epoch [18/20], Step [300/600], Loss: 0.080143
+Epoch [18/20], Step [400/600], Loss: 0.346673
+Epoch [18/20], Step [500/600], Loss: 0.002745
+Epoch [18/20], Step [600/600], Loss: 0.000938
+Epoch [18/20] summary, train_loss:0.42386147, test_loss:0.22699687 duration: 77.5s
+Epoch [19/20], Step [100/600], Loss: 0.245676
+Epoch [19/20], Step [200/600], Loss: 0.015931
+Epoch [19/20], Step [300/600], Loss: 0.000954
+Epoch [19/20], Step [400/600], Loss: 2.968868
+Epoch [19/20], Step [500/600], Loss: 0.336220
+Epoch [19/20], Step [600/600], Loss: 0.052903
+Epoch [19/20] summary, train_loss:0.35296787, test_loss:0.38082211 duration: 56.7s
+Epoch [20/20], Step [100/600], Loss: 0.261909
+Epoch [20/20], Step [200/600], Loss: 0.110872
+Epoch [20/20], Step [300/600], Loss: 0.011373
+Epoch [20/20], Step [400/600], Loss: 0.058436
+Epoch [20/20], Step [500/600], Loss: 0.098738
+Epoch [20/20], Step [600/600], Loss: 0.016494
+Epoch [20/20] summary, train_loss:0.34537390, test_loss:0.31764625 duration: 54.8s
